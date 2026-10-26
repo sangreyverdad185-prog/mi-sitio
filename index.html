@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es-CO" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niebla — Café de altura de origen único</title>
+<meta name="description" content="Café de origen único cultivado a 1.850 metros en un bosque de niebla andino y tostado en lotes pequeños. Conoce los lotes, el proceso y pide el tuyo.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1F150F">
+
+<!-- Redes sociales (añade og:image y og:url cuando tengas la imagen y el dominio) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Niebla Café">
+<meta property="og:title" content="Niebla — Café que crece donde nacen las nubes">
+<meta property="og:description" content="Café de origen único, cultivado a 1.850 metros en bosque de niebla andino y tostado en lotes pequeños.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F150F'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-style='italic' font-size='46' text-anchor='middle' fill='%23C64530'%3EN%3C/text%3E%3C/svg%3E">
+
+<script>document.documentElement.className = 'js';</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    color-scheme: dark;
+
+    --bg: #1F150F;
+    --bg-alt: #291C13;
+    --bg-alt-2: #33241A;
+    --paper: #EFE6D6;
+    --paper-dim: #E2D6BF;
+    --cherry: #A83828;
+    --cherry-bright: #C64530;
+    --gold: #C79A4B;
+    --sage: #7C8B6A;
+    --ink: #1F150F;
+    --cream: #F4EDE0;
+    --cream-dim: rgba(244,237,224,0.72);
+    --cream-faint: rgba(244,237,224,0.62);   /* subido desde .40 para cumplir contraste AA */
+    --line: rgba(244,237,224,0.14);
+
+    /* texto oscuro sobre "papel" (también ajustado para contraste AA) */
+    --ink-dim: rgba(31,21,15,0.74);
+    --ink-faint: rgba(31,21,15,0.66);
+    --ink-line: rgba(31,21,15,0.22);
+
+    --display: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --body: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --wrap: 1180px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:76px;               /* los anclajes no quedan tapados por el header fijo */
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{ background:var(--gold); color:var(--ink); }
+  img, svg{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul, ol{ list-style:none; }
+  button{ font:inherit; color:inherit; }
+  abbr[title]{ text-decoration:none; cursor:help; }
+
+  .wrap{
+    max-width:var(--wrap);
+    margin-inline:auto;
+    padding-inline:32px;
+  }
+
+  h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:0.01em; text-wrap:balance; }
+  p{ text-wrap:pretty; }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px; height:1px;
+    background:var(--gold);
+  }
+
+  /* ---------- accesibilidad ---------- */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  .skip{
+    position:absolute; left:16px; top:-64px; z-index:100;
+    background:var(--gold); color:var(--ink);
+    font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    padding:11px 18px; border-radius:2px;
+    transition:top .2s ease;
+  }
+  .skip:focus{ top:12px; }
+
+  :focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+  .card :focus-visible{ outline-color:var(--cherry); }
+  .cta-final :focus-visible{ outline-color:var(--cream); }
+
+  /* ---------- divisor perforado (motivo: tira de rasgado de la bolsa) ---------- */
+  .scallop{
+    height:14px;
+    width:100%;
+    background-image: radial-gradient(circle at 7px 7px, var(--bg) 5.5px, transparent 5.6px);
+    background-size:14px 14px;
+    background-repeat:repeat-x;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(31,21,15,0.88);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px;
+    padding-block:16px;
+  }
+  .logo{
+    font-family:var(--display);
+    font-size:24px;
+    line-height:1.5;
+    letter-spacing:0.06em;
+  }
+  .logo span{ color:var(--cherry-bright); font-style:italic; }
+  .nav-links{
+    display:flex; gap:36px;
+    font-size:14px;
+    color:var(--cream-dim);
+  }
+  .nav-links a{ position:relative; display:inline-block; padding:6px 0; transition:color .2s ease; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--gold);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .nav-links a:hover{ color:var(--cream); }
+  .nav-links a:hover::after,
+  .nav-links a[aria-current]::after{ transform:scaleX(1); }
+  .nav-links a[aria-current]{ color:var(--cream); }
+
+  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  .nav-cta{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    background:var(--cherry);
+    color:var(--cream);
+    padding:11px 20px;
+    border-radius:2px;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{ background:var(--cherry-bright); }
+
+  .cart{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.06em;
+    color:var(--gold);
+    border:1px solid rgba(199,154,75,0.45);
+    padding:9px 14px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .cart[hidden]{ display:none; }
+  .cart.bump{ animation:bump .35s ease; }
+  @keyframes bump{ 50%{ transform:scale(1.08); } }
+
+  .menu-toggle{
+    display:none;
+    width:44px; height:44px;
+    background:none; border:1px solid var(--line); border-radius:2px;
+    font-size:20px; line-height:1; cursor:pointer;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:96px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 700px 400px at 85% -10%, rgba(199,154,75,0.14), transparent),
+      radial-gradient(ellipse 500px 300px at 0% 100%, rgba(124,139,106,0.10), transparent);
+    pointer-events:none;
+  }
+  /* niebla que se desplaza lentamente (se desactiva con prefers-reduced-motion) */
+  .hero::after{
+    content:"";
+    position:absolute; inset:-25% -15%;
+    background:
+      radial-gradient(ellipse 45% 30% at 30% 40%, rgba(244,237,224,0.055), transparent 70%),
+      radial-gradient(ellipse 40% 28% at 75% 65%, rgba(244,237,224,0.045), transparent 70%);
+    animation:drift 40s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+  @keyframes drift{
+    from{ transform:translate3d(-4%,0,0); }
+    to{ transform:translate3d(4%,-3%,0); }
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:64px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(42px, 5.6vw, 72px);
+    line-height:1.04;
+    margin:22px 0 26px;
+    max-width:12ch;
+  }
+  .hero h1 em{ color:var(--gold); font-style:italic; }
+  .hero p.lede{
+    font-size:18px;
+    color:var(--cream-dim);
+    max-width:46ch;
+    margin-bottom:36px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:15px 28px;
+    border-radius:2px;
+    display:inline-block;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-primary{ background:var(--cherry); color:var(--cream); }
+  .btn-primary:hover{ background:var(--cherry-bright); transform:translateY(-1px); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--cream-dim); }
+  .btn-ghost:hover{ border-color:var(--cream-faint); color:var(--cream); }
+
+  /* ficha / etiqueta — el elemento distintivo */
+  .stamp{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:3px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+    transform:rotate(1.4deg);
+    transition:transform .4s ease;
+  }
+  .stamp:hover{ transform:rotate(0.4deg) translateY(-3px); }
+  .stamp-top{ padding:26px 26px 18px; }
+  .stamp-brand{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--cherry);
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .stamp-title{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:30px;
+    line-height:1.2;
+    margin-bottom:4px;
+  }
+  .stamp-sub{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-faint);
+    margin-bottom:20px;
+  }
+  .stamp-specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 18px;
+    font-family:var(--mono);
+    font-size:12px;
+  }
+  .stamp-specs dt{
+    color:var(--ink-faint);
+    font-size:10px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .stamp-specs dd{ font-weight:500; }
+  .stamp-bottom{
+    background:var(--ink);
+    color:var(--paper);
+    padding:14px 26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+  }
+  .stamp-bottom .dot{ color:var(--sage); }
+
+  /* ---------- estructura de secciones ---------- */
+  section{ padding:104px 0; }
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(32px, 4vw, 46px);
+    margin-top:18px;
+    line-height:1.1;
+  }
+  .section-head p{
+    color:var(--cream-dim);
+    margin-top:16px;
+    font-size:16.5px;
+    max-width:56ch;
+  }
+
+  /* ---------- origen ---------- */
+  .origen{ background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .origen-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:72px;
+    align-items:start;
+  }
+  .origen-copy h2{
+    font-size:clamp(30px, 3.4vw, 38px);
+    line-height:1.12;
+    margin:18px 0 24px;
+  }
+  .origen-copy p{
+    color:var(--cream-dim);
+    margin-bottom:18px;
+    font-size:16px;
+    max-width:52ch;
+  }
+  .origen-copy p:first-of-type{ color:var(--cream); font-size:19px; font-family:var(--display); line-height:1.35; }
+
+  /* curvas de nivel (esquema ilustrativo de la altura) */
+  .contour{ margin-bottom:28px; }
+  .terrain{ width:100%; height:auto; }
+  .terrain text{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.08em;
+    fill:var(--cream-faint);
+    paint-order:stroke;
+    stroke:var(--bg-alt);
+    stroke-width:5px;
+    stroke-linejoin:round;
+  }
+  .terrain text.hi{ fill:var(--gold); font-size:11px; }
+
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .stat{
+    background:var(--bg-alt);
+    padding:28px 20px;
+  }
+  .stat .num{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:40px;
+    line-height:1.15;
+    color:var(--gold);
+    display:block;
+  }
+  .stat .label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cream-faint);
+    margin-top:8px;
+    display:block;
+  }
+
+  /* ---------- cafés / productos ---------- */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:3px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover,
+  .card:focus-within{ transform:translateY(-6px); box-shadow:0 24px 50px -22px rgba(0,0,0,0.5); }
+  .card-band{ height:8px; }
+  .card-band.lavado{ background:var(--sage); }
+  .card-band.honey{ background:var(--gold); }
+  .card-band.natural{ background:var(--cherry); }
+  .card-body{ padding:28px 26px 22px; flex:1; display:flex; flex-direction:column; }
+  .card-eyebrow{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+  .card h3{
+    font-size:27px;
+    font-style:italic;
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .card p{
+    color:var(--ink-dim);
+    font-size:14.5px;
+    margin-bottom:22px;
+    flex:1;
+  }
+  .card-specs{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    border-top:1px dashed var(--ink-line);
+    padding-top:14px;
+    margin-bottom:18px;
+  }
+  .card-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .price{ font-family:var(--mono); font-size:18px; font-weight:500; }
+  .card-buy{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    background:var(--ink);
+    color:var(--paper);
+    border:0;
+    padding:12px 18px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .card-buy:hover{ background:var(--cherry); }
+  .card-buy:active{ transform:scale(0.96); }
+
+  /* ---------- proceso ---------- */
+  .proceso{ background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:0;
+    position:relative;
+  }
+  .step{
+    padding:0 22px 0 0;
+    position:relative;
+  }
+  .step:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:11px; right:0;
+    width:100%;
+    height:1px;
+    background:var(--line);
+  }
+  .step-num{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+  }
+  .step-num .dot{
+    width:22px; height:22px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--bg-alt);
+    z-index:1;
+    font-size:10px;
+  }
+  .step h3{
+    font-size:19px;
+    font-style:italic;
+    margin-bottom:10px;
+  }
+  .step p{
+    color:var(--cream-faint);
+    font-size:13.5px;
+    line-height:1.55;
+  }
+
+  /* ---------- opiniones ---------- */
+  .quotes{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .quote{
+    border-top:1px solid var(--line);
+    padding-top:22px;
+  }
+  .quote p{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:21px;
+    line-height:1.45;
+    color:var(--cream);
+    margin-bottom:18px;
+  }
+  .quote-who{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--cream-faint);
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- cta final ---------- */
+  .cta-final{
+    background:var(--cherry);
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-final::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse 600px 300px at 90% 0%, rgba(0,0,0,0.18), transparent);
+    pointer-events:none;
+  }
+  .cta-grid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+    position:relative;
+  }
+  .cta-grid h2{
+    font-size:clamp(30px, 3.6vw, 44px);
+    max-width:14ch;
+    color:var(--cream);
+  }
+  .cta-grid p{ color:rgba(244,237,224,0.9); margin-top:12px; max-width:42ch; }
+  .subscribe-wrap{ min-width:340px; }
+  .subscribe{
+    display:flex;
+    gap:0;
+    background:var(--cream);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .subscribe:focus-within{ outline:2px solid var(--cream); outline-offset:3px; }
+  .subscribe input{
+    border:none;
+    background:transparent;
+    padding:16px 18px;
+    font-family:var(--body);
+    font-size:16px;                 /* 16px evita el zoom automático en iOS */
+    color:var(--ink);
+    flex:1;
+    min-width:0;
+  }
+  .subscribe input::placeholder{ color:var(--ink-faint); opacity:1; }
+  .subscribe input:focus{ outline:none; }
+  .subscribe button{
+    border:none;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:var(--mono);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:0 22px;
+    cursor:pointer;
+    transition:background .2s ease;
+  }
+  .subscribe button:hover{ background:#000; }
+  .subscribe button:disabled{ opacity:0.7; cursor:wait; }
+  .form-msg{
+    margin-top:12px;
+    min-height:1.5em;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.02em;
+    color:var(--cream);
+  }
+  .form-msg[data-state="ok"]::before{ content:"✓ "; }
+  .form-msg[data-state="error"]::before{ content:"✕ "; }
+
+  /* ---------- footer ---------- */
+  footer{ padding:64px 0 40px; }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:32px;
+    padding-bottom:48px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:28px;
+  }
+  .foot-brand .logo{ margin-bottom:14px; display:inline-block; }
+  .foot-brand p{ color:var(--cream-faint); font-size:13.5px; max-width:32ch; }
+  .foot-title{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--cream-faint);
+    margin-bottom:16px;
+  }
+  .foot-col ul li{ margin-bottom:10px; }
+  .foot-col a{ color:var(--cream-dim); font-size:14px; transition:color .2s ease; }
+  .foot-col a:hover{ color:var(--cream); }
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--cream-faint);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- aviso emergente ---------- */
+  .toast{
+    position:fixed; left:50%; bottom:24px; z-index:60;
+    transform:translate(-50%,16px);
+    max-width:calc(100vw - 32px);
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-align:center;
+    padding:12px 18px;
+    border-radius:3px;
+    box-shadow:0 18px 40px -16px rgba(0,0,0,0.6);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .toast.show{ opacity:1; transform:translate(-50%,0); }
+
+  /* ---------- aparición al hacer scroll (solo si hay JS) ---------- */
+  .js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .js .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:0.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.01ms !important;
+      scroll-behavior:auto !important;
+    }
+    .js .reveal{ opacity:1; transform:none; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .stamp{ max-width:420px; }
+    .origen-grid{ grid-template-columns:1fr; gap:40px; }
+    .cards{ grid-template-columns:1fr 1fr; }
+    .steps{ grid-template-columns:1fr 1fr; row-gap:36px; }
+    .step:nth-child(2)::after, .step:nth-child(4)::after{ display:none; }
+    .quotes{ grid-template-columns:1fr; gap:36px; }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+  }
+  /* con 2 columnas, la tercera tarjeta queda centrada en vez de huérfana */
+  @media (min-width:641px) and (max-width:980px){
+    .cards .card:last-child:nth-child(odd){
+      grid-column:1 / -1;
+      justify-self:center;
+      width:calc(50% - 14px);
+    }
+  }
+  @media (max-width:640px){
+    html{ scroll-padding-top:68px; }
+    section{ padding:72px 0; }
+    .hero{ padding:56px 0 48px; }
+    .wrap{ padding-inline:20px; }
+    .nav{ padding-block:12px; gap:12px; }
+    .logo{ font-size:22px; }
+    .nav-cta{ display:none; }
+    .menu-toggle{ display:block; }
+    .nav-links{
+      display:none;
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--bg-alt);
+      border-bottom:1px solid var(--line);
+      padding:6px 20px 16px;
+      font-size:16px;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links li + li{ border-top:1px solid var(--line); }
+    .nav-links a{ display:block; padding:14px 0; }
+    .nav-links a::after{ display:none; }
+    .nav-links a[aria-current]{ color:var(--gold); }
+    .cards{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .step:not(:last-child)::after{ display:none; }
+    .stats{ grid-template-columns:1fr; }
+    .terrain text{ font-size:12px; stroke-width:6px; }
+    .terrain text.hi{ font-size:13px; }
+    .cta-grid{ flex-direction:column; align-items:flex-start; }
+    .subscribe-wrap{ width:100%; min-width:0; }
+    .foot-grid{ grid-template-columns:1fr; }
+    .toast{ bottom:16px; }
+  }
+
+  /* sin JavaScript: el menú móvil queda visible y en línea */
+  @media (max-width:640px){
+    .no-js .menu-toggle{ display:none; }
+    .no-js .nav{ flex-wrap:wrap; }
+    .no-js .nav-links{
+      display:flex; position:static; flex-direction:row; flex-wrap:wrap; gap:6px 20px;
+      width:100%; order:3; padding:0 0 8px; background:none; border:0; font-size:14px;
+    }
+    .no-js .nav-links li + li{ border-top:0; }
+    .no-js .nav-links a{ padding:6px 0; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header>
+  <nav class="nav wrap" aria-label="Principal">
+    <a href="#inicio" class="logo" aria-label="Niebla, ir al inicio"><span>N</span>iebla</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#origen">Origen</a></li>
+      <li><a href="#cafes">Cafés</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span class="cart" id="cart" hidden>Tu pedido · <span id="cart-count">0</span></span>
+      <a href="#cafes" class="nav-cta">Comprar</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="contenido">
+
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Lote 24 · Finca La Esperanza</span>
+      <h1 id="hero-title">Café que crece donde <em>nacen</em> las nubes</h1>
+      <p class="lede">Cultivamos a 1.850 metros de altura, en la niebla permanente de un bosque de niebla andino. Tostamos en lotes pequeños, a los pocos días de la cosecha, para que cada bolsa conserve el clima que la formó.</p>
+      <div class="hero-actions">
+        <a href="#cafes" class="btn btn-primary">Ver cafés</a>
+        <a href="#origen" class="btn btn-ghost">Conocer el origen</a>
+      </div>
+    </div>
+
+    <aside class="stamp" aria-label="Ficha del Lote 24">
+      <div class="stamp-top">
+        <div class="stamp-brand"><span>Niebla · Café de origen</span><span>Lote 24</span></div>
+        <p class="stamp-title">La Esperanza</p>
+        <p class="stamp-sub">Vereda Santa Rita — Andes, Colombia</p>
+        <dl class="stamp-specs">
+          <div><dt>Altura</dt><dd>1.850 <abbr title="metros sobre el nivel del mar">msnm</abbr></dd></div>
+          <div><dt>Variedad</dt><dd>Caturra &amp; Bourbon</dd></div>
+          <div><dt>Proceso</dt><dd>Lavado</dd></div>
+          <div><dt>Notas</dt><dd>Panela, cereza, jazmín</dd></div>
+        </dl>
+      </div>
+      <div class="scallop" aria-hidden="true"></div>
+      <div class="stamp-bottom">
+        <span>Tueste: 04 lotes / semana</span>
+        <span class="dot" aria-hidden="true">●</span>
+        <span>340 g</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="origen" id="origen" aria-labelledby="origen-title">
+  <div class="wrap origen-grid">
+    <div class="origen-copy reveal">
+      <span class="eyebrow">El origen</span>
+      <h2 id="origen-title">Doce familias, un mismo bosque</h2>
+      <p>La Esperanza no es una finca grande: son doce familias caficultoras que comparten una misma ladera y un mismo bosque nativo que protege el nacimiento de agua.</p>
+      <p>Cosechamos solo el cereza maduro, un grano a la vez. El café descansa unos días antes del despulpado, y se seca lento, bajo techo, para que la niebla —que ralentiza todo en la montaña— quede también en la taza.</p>
+    </div>
+
+    <div class="reveal">
+      <figure class="contour">
+        <svg class="terrain" viewBox="-280 -118 560 236" role="img" aria-label="Esquema de curvas de nivel: nuestros lotes crecen entre los 1.700 y los 1.900 metros sobre el nivel del mar">
+          <defs>
+            <path id="blob" fill="none" vector-effect="non-scaling-stroke"
+              d="M -240,10 C -240,-60 -170,-95 -100,-90 C -40,-86 -10,-100 50,-92 C 130,-82 200,-60 232,-10 C 258,35 210,82 140,92 C 70,102 20,86 -40,94 C -120,104 -240,80 -240,10 Z"/>
+          </defs>
+          <g stroke="rgba(244,237,224,0.38)" stroke-width="1">
+            <use href="#blob"/>
+            <use href="#blob" transform="scale(0.8)"/>
+            <use href="#blob" transform="scale(0.6)"/>
+          </g>
+          <use href="#blob" transform="scale(0.4)" stroke="#C79A4B" stroke-width="1.5"/>
+          <use href="#blob" transform="scale(0.2)" stroke="rgba(244,237,224,0.38)" stroke-width="1"/>
+          <g aria-hidden="true">
+            <text x="239" y="18.5" text-anchor="middle">1.700</text>
+            <text x="191" y="15.5" text-anchor="middle">1.750</text>
+            <text x="144" y="12.5" text-anchor="middle">1.800</text>
+            <text class="hi" x="96" y="9.5" text-anchor="middle">1.850</text>
+            <text x="48" y="6.5" text-anchor="middle">1.900</text>
+          </g>
+        </svg>
+      </figure>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="num">1.850</span>
+          <span class="label"><abbr title="metros sobre el nivel del mar">msnm</abbr> de altura</span>
+        </div>
+        <div class="stat">
+          <span class="num">12</span>
+          <span class="label">familias caficultoras</span>
+        </div>
+        <div class="stat">
+          <span class="num">3 ha</span>
+          <span class="label">bosque nativo conservado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cafes" aria-labelledby="cafes-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cafés</span>
+      <h2 id="cafes-title">Tres lotes, tres formas de contar el mismo origen</h2>
+      <p>Cada bolsa lleva la ficha del lote: finca, altura, variedad y proceso, tal como la anotamos el día del tueste.</p>
+    </div>
+
+    <div class="cards reveal">
+      <article class="card">
+        <div class="card-band lavado" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="card-eyebrow">Lote 24 — Proceso lavado</span>
+          <h3>La Esperanza</h3>
+          <p>Taza limpia y brillante, con dulzor a panela y un cierre floral. El clásico de la casa.</p>
+          <div class="card-specs">
+            <span>1.850 msnm</span>
+            <span>340 g</span>
+          </div>
+          <div class="card-foot">
+            <data class="price" value="62000">$62.000</data>
+            <button type="button" class="card-buy" data-add aria-label="Añadir La Esperanza al pedido">Añadir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band honey" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="card-eyebrow">Lote 09 — Proceso honey</span>
+          <h3>El Mirador</h3>
+          <p>Cuerpo denso y dulzura de miel, con notas a durazno maduro y caña de azúcar.</p>
+          <div class="card-specs">
+            <span>1.720 msnm</span>
+            <span>340 g</span>
+          </div>
+          <div class="card-foot">
+            <data class="price" value="68000">$68.000</data>
+            <button type="button" class="card-buy" data-add aria-label="Añadir El Mirador al pedido">Añadir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band natural" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="card-eyebrow">Lote 15 — Proceso natural</span>
+          <h3>Los Alisos</h3>
+          <p>Fermentado y afrutado, con capas de mora, vino tinto y un final a chocolate oscuro.</p>
+          <div class="card-specs">
+            <span>1.900 msnm</span>
+            <span>340 g</span>
+          </div>
+          <div class="card-foot">
+            <data class="price" value="70000">$70.000</data>
+            <button type="button" class="card-buy" data-add aria-label="Añadir Los Alisos al pedido">Añadir</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="proceso" id="proceso" aria-labelledby="proceso-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Proceso</span>
+      <h2 id="proceso-title">De la rama a la bolsa</h2>
+      <p>Cinco pasos, siempre en el mismo orden, para que el lote llegue con la misma identidad con la que salió de la montaña.</p>
+    </div>
+
+    <ol class="steps reveal" role="list">
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span class="dot">01</span></div>
+        <h3>Cosecha selectiva</h3>
+        <p>Solo se recoge el cereza en su punto justo de madurez, grano a grano.</p>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span class="dot">02</span></div>
+        <h3>Despulpado</h3>
+        <p>El mismo día de la cosecha, para frenar la fermentación no deseada.</p>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span class="dot">03</span></div>
+        <h3>Secado lento</h3>
+        <p>Bajo techo, removido a mano, entre 12 y 18 días según el clima.</p>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span class="dot">04</span></div>
+        <h3>Tueste en lotes</h3>
+        <p>Tandas pequeñas, tostadas la semana en que se despachan.</p>
+      </li>
+      <li class="step">
+        <div class="step-num" aria-hidden="true"><span class="dot">05</span></div>
+        <h3>Empaque hermético</h3>
+        <p>Válvula de desgasificación y sello, para que llegue tan fresco como salió.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="opiniones" aria-labelledby="opiniones-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Opiniones</span>
+      <h2 id="opiniones-title">Lo que dicen quienes ya lo prepararon</h2>
+    </div>
+
+    <div class="quotes reveal">
+      <figure class="quote">
+        <blockquote>
+          <p>“Es el primer café con proceso honey que realmente sabe a fruta y no solo a la palabra ‘honey’ en la bolsa.”</p>
+        </blockquote>
+        <figcaption class="quote-who">Mariana O. — barista, Bogotá</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>
+          <p>“La ficha del lote en cada bolsa cambió cómo le explico el café a mis clientes en la tienda.”</p>
+        </blockquote>
+        <figcaption class="quote-who">Camilo R. — tostador independiente</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>
+          <p>“Pedí el Lote 24 por curiosidad y ahora es lo único que compro para la casa.”</p>
+        </blockquote>
+        <figcaption class="quote-who">Valentina S. — suscriptora desde 2023</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" aria-labelledby="cta-title">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 id="cta-title">Recibe tu próximo lote antes de que se agote</h2>
+      <p>Avisamos por correo cuando sale un lote nuevo del tueste, con la ficha completa antes que nadie.</p>
+    </div>
+    <div class="subscribe-wrap">
+      <form class="subscribe" id="subscribe" novalidate>
+        <label class="sr-only" for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" inputmode="email" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+      <p class="form-msg" id="subscribe-msg" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#inicio" class="logo" aria-label="Niebla, ir al inicio"><span>N</span>iebla</a>
+        <p>Café de origen único, cultivado en bosque de niebla andino y tostado en lotes pequeños.</p>
+      </div>
+      <!-- TODO: reemplaza los href="#" por las URLs reales de cada página o red social -->
+      <nav class="foot-col" aria-labelledby="foot-tienda">
+        <h2 class="foot-title" id="foot-tienda">Tienda</h2>
+        <ul>
+          <li><a href="#cafes">Todos los cafés</a></li>
+          <li><a href="#">Suscripción</a></li>
+          <li><a href="#">Regalos</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-labelledby="foot-marca">
+        <h2 class="foot-title" id="foot-marca">Marca</h2>
+        <ul>
+          <li><a href="#origen">Origen</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#">Sostenibilidad</a></li>
+        </ul>
+      </nav>
+      <nav class="foot-col" aria-labelledby="foot-sigue">
+        <h2 class="foot-title" id="foot-sigue">Síguenos</h2>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Correo</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Niebla Café. Todos los derechos reservados.</span>
+      <span>Andes, Colombia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $  = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+
+  /* ---- Configuración ----
+     SUBSCRIBE_ENDPOINT: URL que recibe el correo (Formspree, Mailchimp, tu API…).
+     Si se deja vacío, el formulario funciona en modo demostración (no envía nada). */
+  const SUBSCRIBE_ENDPOINT = '';
+
+  /* Año del pie de página */
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- Menú móvil ---- */
+  const toggle = $('.menu-toggle');
+  const menu = $('#nav-links');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    toggle.textContent = open ? '✕' : '☰';
+  };
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
+  });
+  window.matchMedia('(min-width: 641px)').addEventListener('change', () => setMenu(false));
+
+  /* ---- Aparición al hacer scroll ---- */
+  const revealEls = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach((el) => revealObs.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('in'));
+  }
+
+  /* ---- Sección activa en el menú ---- */
+  const navLinks = $$('.nav-links a');
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        navLinks.forEach((a) => {
+          if (a.getAttribute('href') === '#' + e.target.id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main > section[id]').forEach((s) => spy.observe(s));
+  }
+
+  /* ---- Aviso + contador del pedido ---- */
+  const toast = $('#toast');
+  const cart = $('#cart');
+  const cartCount = $('#cart-count');
+  let count = 0, toastTimer;
+
+  const showToast = (msg) => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => { if (!toast.classList.contains('show')) toast.textContent = ''; }, 300);
+    }, 2600);
+  };
+
+  $$('[data-add]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const name = $('h3', btn.closest('.card')).textContent.trim();
+      count += 1;
+      cartCount.textContent = count;
+      cart.hidden = false;
+      cart.classList.remove('bump'); void cart.offsetWidth; cart.classList.add('bump');
+      // TODO: conecta aquí tu carrito / checkout real (Shopify, WooCommerce, Stripe…)
+      showToast(name + ' añadido a tu pedido');
+    });
+  });
+
+  /* ---- Formulario de suscripción ---- */
+  const form = $('#subscribe');
+  const msg = $('#subscribe-msg');
+  const setMsg = (state, text) => { msg.dataset.state = state; msg.textContent = text; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = form.elements.email;
+    const btn = $('button', form);
+    const email = input.value.trim();
+
+    if (!input.checkValidity() || !email) {
+      setMsg('error', 'Escribe un correo válido, por ejemplo tu@correo.com');
+      input.focus();
+      return;
+    }
+
+    const label = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    setMsg('', '');
+
+    try {
+      if (SUBSCRIBE_ENDPOINT) {
+        const res = await fetch(SUBSCRIBE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+      }
+      setMsg('ok', '¡Listo! Te escribiremos cuando salga el próximo lote.');
+      form.reset();
+    } catch (err) {
+      setMsg('error', 'No pudimos registrar tu correo. Inténtalo de nuevo en unos minutos.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
